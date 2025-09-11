@@ -1,3 +1,4 @@
+import 'package:club_sync/screens/screens.dart';
 import 'package:club_sync/style/style.dart';
 import 'package:club_sync/widgets/widgets.dart';
 import 'package:flutter/material.dart';
@@ -17,15 +18,9 @@ class LoginPage extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            const Text(
-              'ClubSync',
-              style: TextStyle(
-                fontFamily: 'BebasNeue',
-                fontSize: 60,
-                fontWeight: FontWeight.w400,
-                color: CSColors.primaryColor,
-              ),
-            ),
+            Text('ClubSync',
+                style: CSTextStyle.logoText
+                    .copyWith(color: CSColors.primaryColor)),
             const SizedBox(height: 40),
             CSTextField(
               controller: usernameController,
@@ -38,11 +33,15 @@ class LoginPage extends StatelessWidget {
               csTextFieldType: CSTextFieldType.password,
             ),
             const SizedBox(height: 40),
-            const Row(
+            Row(
               children: [
                 Expanded(
                   child: CSButton(
                     label: 'Log in',
+                    onPressed: () => Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => const HomePage()),
+                    ),
                   ),
                 ),
               ],

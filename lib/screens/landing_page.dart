@@ -1,4 +1,5 @@
 import 'package:club_sync/screens/screens.dart';
+import 'package:club_sync/style/cs_text_styles.dart';
 import 'package:club_sync/style/style.dart';
 import 'package:flutter/material.dart';
 
@@ -20,17 +21,12 @@ class _LandingPageState extends State<LandingPage> {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
+    return Scaffold(
       backgroundColor: CSColors.primaryColor,
       body: Center(
         child: Text(
           'ClubSync',
-          style: TextStyle(
-            fontFamily: 'BebasNeue',
-            fontSize: 60,
-            fontWeight: FontWeight.w400,
-            color: CSColors.white,
-          ),
+          style: CSTextStyle.logoText.copyWith(color: CSColors.white),
         ),
       ),
     );
