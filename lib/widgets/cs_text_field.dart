@@ -53,18 +53,11 @@ class _CSTextFieldState extends State<CSTextField> {
       obscureText: showPassword,
       decoration: InputDecoration(
         labelText: widget.labelText,
-        labelStyle: const TextStyle(
-          fontFamily: 'Poppins',
-          fontSize: 15,
-          fontWeight: FontWeight.w400,
-        ),
+        labelStyle: CSTextStyle.bodyText,
         floatingLabelAlignment: FloatingLabelAlignment.start,
         floatingLabelBehavior: FloatingLabelBehavior.auto,
-        floatingLabelStyle: const TextStyle(
-            fontFamily: 'Poppins',
-            fontSize: 15,
-            fontWeight: FontWeight.w500,
-            color: CSColors.primaryColor),
+        floatingLabelStyle:
+            CSTextStyle.bodyText.copyWith(color: CSColors.primaryColor),
         enabledBorder: OutlineInputBorder(
           borderSide: const BorderSide(color: Colors.grey),
           borderRadius: BorderRadius.circular(8),
